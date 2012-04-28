@@ -1,3 +1,3 @@
 == juice4j
 
-juice4j aims to be collection of utility Java APIs.
+juice4j aims to be a collection of utility Java APIs.
