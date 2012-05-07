@@ -27,8 +27,8 @@ public abstract class ElementValueWrapper<V> implements Serializable {
 	
 	/**
 	 * Wraps the given element value.
-	 * @param value the value aimed to be wrapped
-	 * @throws IllegalStateException when called more than once
+	 * @param value The value aimed to be wrapped.
+	 * @throws IllegalStateException When called more than once.
 	 */	
 	public void wrap(V value) {
 		if (this.alreadyWrapped) {
@@ -43,9 +43,9 @@ public abstract class ElementValueWrapper<V> implements Serializable {
 	 * Reconstructs the wrapped value.
 	 * <p>
 	 * Commonly used after bringing this wrapper instance from cache.
-	 * @return the wrapped value. It's state should conform to side effects
+	 * @return The wrapped value. It's state should conform to side effects
 	 * stated by the wrapper implementation contract.
-	 * @throws IllegalStateException when called before a call to {@link #wrap(Object)}
+	 * @throws IllegalStateException When called before a call to {@link #wrap(Object)}.
 	 */
 	public V reconstruct() {
 		if (!alreadyWrapped) {
@@ -57,13 +57,13 @@ public abstract class ElementValueWrapper<V> implements Serializable {
 	
 	/**
 	 * Effectively wraps the element value. 
-	 * Should conform to {@link #wrap(Object)} contract
+	 * Should conform to {@link #wrap(Object)} contract.
 	 */
 	protected abstract void doWrapping(V value);
 	
 	/**
 	 * Effectively reconstructs the element value. 
-	 * Should conform to {@link #reconstruct()} contract
+	 * Should conform to {@link #reconstruct()} contract.
 	 */		
 	protected abstract V doReconstruct();
 	
